@@ -8,18 +8,14 @@ vanlig = (vanlig2*2)+(vanlig3*3)
 vegansk = (vegansk2*2)+(vegansk3*3)
 
 
-#vanligpkt = (vanlig//8) # Antal paket som behöver köpas när det är 8 korvar per förpackning
-#vanligpkt_decimal = (vanlig%8)
-#if vanligpkt_decimal > 0: # Lägger till värde 1 till vanligtpkt då heltalsdivision annars avrunder nedåt, för att få rätt paket
-#    vanligpkt+=1
-#veganskpkt = (vegansk//4) # Likadant som ovan fast för veganska korvar och det är 4 per förpackning
-#veganskpkt_decimal = (vegansk%8)
-#if veganskpkt_decimal > 0: # Lägger till värde 1 till veganskpkt då heltalsdivision annars avrundar nedåt, för att få rätt paket
-#    veganskpkt+=1
-
-
-vanligpkt = (round(vanlig/8))
-veganskpkt = (round(vegansk/4))
+vanligpkt = (vanlig//8) # Antal paket som behöver köpas när det är 8 korvar per förpackning
+vanligpkt_decimal = (vanlig%8)
+if vanligpkt_decimal > 0: # Lägger till värde 1 till vanligtpkt då heltalsdivision annars avrunder nedåt, för att få rätt antal paket
+    vanligpkt+=1
+veganskpkt = (vegansk//4) # Likadant som ovan fast för veganska korvar och det är 4 per förpackning
+veganskpkt_decimal = (vegansk%8)
+if veganskpkt_decimal > 0: # Lägger till värde 1 till veganskpkt då heltalsdivision annars avrundar nedåt, för att få rätt antal paket
+    veganskpkt+=1
 
 kostnad = round((vanligpkt*20.95)+(veganskpkt*34.95)+(dryck*13.95), 2) # Uträkning av totala kostnaden
 
