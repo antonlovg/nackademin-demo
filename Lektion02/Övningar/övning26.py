@@ -4,16 +4,20 @@ vegansk2 = int(input("Hur många vill äta 2 veganska korvar? "))
 vegansk3 = int(input("Hur många vill äta 3 veganska korvar? "))
 
 dryck = vanlig2+vanlig3+vegansk2+vegansk3
-vanlig = (vanlig2*2)+(vanlig3*3)
-vegansk = (vegansk2*2)+(vegansk3*3)
+#vanlig = (vanlig2*2)+(vanlig3*3)
+#vegansk = (vegansk2*2)+(vegansk3*3)
 
 
-vanligpkt = (vanlig//8) # Antal paket som behöver köpas när det är 8 korvar per förpackning
-vanligpkt_decimal = (vanlig%8)
+vanligpkt = ((vanlig2 * 2 + vanlig3 * 3) // 8) # Antal paket som behöver köpas när det är 8 korvar per förpackning
+#vanligpkt = (vanlig//8) # Antal paket som behöver köpas när det är 8 korvar per förpackning
+#vanligpkt_decimal = (vanlig%8)
+vanligpkt_decimal = (vanligpkt%8)
 if vanligpkt_decimal > 0: # Lägger till värde 1 till vanligtpkt då heltalsdivision annars avrunder nedåt, för att få rätt antal paket
     vanligpkt+=1
-veganskpkt = (vegansk//4) # Likadant som ovan fast för veganska korvar och det är 4 per förpackning
-veganskpkt_decimal = (vegansk%8)
+veganskpkt = ((vegansk2 * 2 + vegansk3 * 3) // 4) # Likadant som ovan fast för veganska korvar och det är 4 per förpackning
+#veganskpkt = (vegansk//4) # Likadant som ovan fast för veganska korvar och det är 4 per förpackning
+#veganskpkt_decimal = (vegansk%8)
+veganskpkt_decimal = (veganskpkt%8)
 if veganskpkt_decimal > 0: # Lägger till värde 1 till veganskpkt då heltalsdivision annars avrundar nedåt, för att få rätt antal paket
     veganskpkt+=1
 
