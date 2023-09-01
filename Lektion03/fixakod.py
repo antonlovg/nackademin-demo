@@ -1,13 +1,12 @@
 # Övning - Fixa if-loop
-"""
 order = input("What would you like to order: pizza or hamburger? ")
 if order == "hamburger":
   print("Thank you.")
-cheese = input("Do you want cheese? ")
-if cheese == "yes":
-  print("You got it.")
-else:
-  print("No cheese it is.")
+  cheese = input("Do you want cheese? ")
+  if cheese == "yes":
+    print("You got it.")
+  else:
+    print("No cheese it is.")
 if order == "pizza":
   print("Pizza coming up.")
   toppings = input("Do you want pepperoni on that? ")
@@ -15,7 +14,6 @@ if order == "pizza":
     print("We will add pepperoni.")
   else:
     print("Your pizza will not have pepperoni.")
-"""
 
 # Övning - Fixa while-loop
 '''
@@ -54,10 +52,11 @@ for counter in range(100):
 '''
 
 # Övning
+'''
 print("Ange ett startnummer:")
 startNummer = input("> ")
 print("Ange ett slutnummer:")
 slutNummer = input("> ")
 print("Ange hur snabbt nummer ska ökas:")
 incrementNummer = input("> ")
-
+'''
