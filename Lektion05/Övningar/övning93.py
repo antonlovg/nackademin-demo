@@ -1,4 +1,7 @@
 fornamn = ["Maria", "Erik", "Karl"]
 efternamn = ["Svensson", "Karlsson", "Andersson"]
 
-for n in fornamn:
+for fore in fornamn:
+    for efter in efternamn:
+        print(fore, efter)
+        
