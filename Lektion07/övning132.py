@@ -25,6 +25,11 @@ while True:
 
     väder = response_dict["forecasts"]
 
+    for n in väder:
+        print(f"{n['date']}\t{n['forecast']}")
+
+    """
+    Tidigare lösning innan for-loop
     x0 = väder[0]
     x1 = väder[1]
     x2 = väder[2]
@@ -34,6 +39,9 @@ while True:
     print(f"{x1['date']}\t{x1['forecast']}")
     print(f"{x2['date']}\t{x2['forecast']}")
     print(f"{x3['date']}\t{x3['forecast']}")
+    """
+
+    print("-" * ui_width)
     break
 
     # forecasts {
