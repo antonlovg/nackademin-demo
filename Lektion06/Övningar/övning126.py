@@ -81,7 +81,7 @@ while True:
         print("-" * ui_width)
         input("Tryck på enter för att fortsätta...")
     
-    elif val == "exit":
+    elif val == "exit": # Gör en exit-window
         break
     
     else:
