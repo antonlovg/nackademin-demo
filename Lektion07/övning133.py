@@ -4,16 +4,19 @@ import requests
 
 ui_width = 20
 
+# API
 url_artister = 'https://5hyqtreww2.execute-api.eu-north-1.amazonaws.com/artists/'
 
 while True:
 
+    # Clearar terminalen
     if os.name == "nt":
         os.system("cls")
     
     elif os.name == "posix":
         os.system("clear")
 
+    # Skapar mitt UI
     print("----- ARTIST DB -----".center(ui_width))
     print("Ariana Grande")
     print("Avicii")
@@ -25,7 +28,7 @@ while True:
     print("Scorpions")
     print("-" * ui_width)
     print("Select artist:")
-
+    
     val = input("> ").lower()
     print("-" * ui_width)
 
@@ -53,18 +56,6 @@ while True:
         response = requests.get(url_id)
         response_dict = json.loads(response.text)
 
-        # Testar alla variablar
-        #artist = response_dict['artist']
-        #artist_genre = artist['genres'] # Smma sak som response_dict['artist']['genres']
-        #artist_active = artist['years_active'] # Samma sak som response_dict['artist']['years_active']
-        #artist_members = artist['members'] # Samma sak som response_dict['artist']['members']
-        #artist_name = artist['name'] # Samma sak som response_dict['artist']['name']
-
-        #print(f"Genre: {artist_genre}")
-        #print(f"Active: {artist_active}")
-        #print(f"Members: {artist_members}")
-        #print(f"Name: {artist_name}")
-
         #for genres in artist_genre:
         print(response_dict['artist']['name'])
         print("*" * ui_width)
@@ -85,7 +76,18 @@ while True:
 
 
 
+         # Hade denna i if-satsen, efter response_dict
+        # Testar alla variablar
+        #artist = response_dict['artist']
+        #artist_genre = artist['genres'] # Smma sak som response_dict['artist']['genres']
+        #artist_active = artist['years_active'] # Samma sak som response_dict['artist']['years_active']
+        #artist_members = artist['members'] # Samma sak som response_dict['artist']['members']
+        #artist_name = artist['name'] # Samma sak som response_dict['artist']['name']
 
+        #print(f"Genre: {artist_genre}")
+        #print(f"Active: {artist_active}")
+        #print(f"Members: {artist_members}")
+        #print(f"Name: {artist_name}")
 
 
 
