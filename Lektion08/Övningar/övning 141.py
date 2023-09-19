@@ -2,17 +2,35 @@
 
 dist = input("Ange distans > ").lower()
 
+
 def km_to_miles(dist_km):
-    omvandla = dist / 0,621371
-    return omvandla
-    
-def miles_to_km(dist_miles):
-    omvandla = dist * 1,60934
+    omvandla = dist_km * 0.621371
     return omvandla
 
-if dist.endswith == "km":
-    omvandlad_dist = km_to_miles()
-    print(f"{dist} motsvarar {omvandlad_dist} miles.")
+
+def miles_to_km(dist_miles):
+    omvandla = dist_miles * 1.60934
+    return omvandla
+
+
+dist = dist.strip()  # Ta bort allt onödigt i användarens inmatning ->
+# https://www.w3schools.com/python/ref_string_strip.asp
+
+if dist.endswith("km"):
+    dist = dist.replace("km", "")
+    try:
+        # dist = float(dist)
+        omvandlad_dist = km_to_miles(float(dist))
+        print(f"{dist}km motsvarar {omvandlad_dist} miles.")
+    except ValueError:
+        print("Ange ett nummer följt av km")
+
+elif dist.endswith("miles"):
+    dist = dist.replace("miles", "")
+    try:
+        omvandlad_dist = miles_to_km(float(dist))
+        print(f"{dist}miles motsvarar {omvandlad_dist} km.")
+    except ValueError:
+        print("Ange ett nummer följt av miles")
 else:
-    omvandlad_dist = miles_to_km()
-    print(f"{dist} motsvarar {omvandlad_dist} km.")
+    print("Ange ett nummer följt av km eller miles")
