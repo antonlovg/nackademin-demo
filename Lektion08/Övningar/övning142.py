@@ -1,4 +1,5 @@
-import user_interface as ui # TEstade alias, ifall man har en modul som är för lång så kan man använda as och använda
+import user_interface as ui  # Testade alias, ifall man har en modul som är för lång så kan man använda as och använda
+
 # den i koden istället
 
 ui.line()
@@ -14,5 +15,9 @@ ui.echo("B | Lägg till vara")
 ui.echo("C | Ta bort vara")
 ui.echo("X | Stäng programmet")
 ui.line()
-ui.prompt("Val")
+val = ui.prompt("Val")
 
+if val.upper() == "X":
+    ui.clear()
+
+ui.prompt("Enter så är du done")

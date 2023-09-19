@@ -17,8 +17,8 @@ def echo(text):
     print("| " + text)
 
 
-def prompt(text):
-    return input("| " + text + " > ")
+def prompt(val):
+    return input("| " + val + " > ")
 
 
 def clear():
