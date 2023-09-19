@@ -11,8 +11,8 @@ def miles_to_km(dist_miles):
     return omvandla
 
 if dist.endswith == "km":
-    omvandlad_dist = km_to_miles(dist_km)
+    omvandlad_dist = km_to_miles()
     print(f"{dist} motsvarar {omvandlad_dist} miles.")
 else:
-    omvandlad_dist = miles_to_km(dist_miles)
-    print(f"{dist} motsvarar {omvandlad_dist} km")
+    omvandlad_dist = miles_to_km()
+    print(f"{dist} motsvarar {omvandlad_dist} km.")
