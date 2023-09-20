@@ -97,10 +97,24 @@ def make_list(dictinary):
 # Anropa funktionen
 min_lista = make_list(teams)
 
-# Extra övning
-# Summera alla wins
-summa = 0
-for country in min_lista:
-    summa += country['wins']
 
-print("Summa av alla wins är", summa)
+# En funktion som skriver ut en tabell i terminalen
+def print_table(lista):
+    print("-" * 50)
+    print("| # |", "Nation".ljust(11), "| W | D | L | GF | GA | GD | P |")
+    print("-" * 50)
+    nummer = 1
+    for i in lista:
+        c = i['country']
+        w = i['wins']
+        d = i['draws']
+        l = i['losses']
+        gf = i['goals_for']
+        ga = i['goals_against']
+        gd = str(i['goals_for']-i['goals_against'])
+        p = (w*3) + d
+        print(f"| {nummer} | {c.ljust(11)} | {w} | {d} | {l} |  {gf} |  {ga} | {gd.rjust(2)} | {p} |")  # i = index eller item
+        nummer += 1
+
+print_table(min_lista)
+print("-" * 50)
